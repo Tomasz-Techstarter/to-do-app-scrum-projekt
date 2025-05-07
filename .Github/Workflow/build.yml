@@ -8,7 +8,7 @@ jobs:
     name: Build and Push Docker Images
     runs-on: ubuntu-latest
     env:
-      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_tomasz652 }}
       DOCKERHUB_ACCESS_TOKEN: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
     steps:
     # 1. Checkout des Repository-Codes
@@ -20,7 +20,7 @@ jobs:
     # 3. Docker-Image für das Frontend erstellen
     - name: Build Frontend Image
       run: |
-        docker build -t $DOCKERHUB_USERNAME/frontend:latest ./frontend
+        docker build -t $DOCKERHUB_tomasz652/frontend:latest ./frontend
     # 4. Docker-Image für das Backend erstellen
     - name: Build Backend Image
       run: |
@@ -28,11 +28,11 @@ jobs:
     # 5. Frontend-Image zu Docker Hub pushen
     - name: Push Frontend Image
       run: |
-        docker push $DOCKERHUB_USERNAME/frontend:latest
+        docker push $DOCKERHUB_tomasz652/frontend:latest
     # 6. Backend-Image zu Docker Hub pushen
     - name: Push Backend Image
       run: |
-        docker push $DOCKERHUB_USERNAME/backend:latest
+        docker push $DOCKERHUB_tomasz652/backend:latest
 
 
 
